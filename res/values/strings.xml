@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">AndroidApplicationLivraison</string>
+    <string name="app_name">Livraison</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="Detail_Mission">Détail de la mission</string>
+    <string name="Texte_Descriptif">Texte descriptif de la mission ...</string>
+
 
 </resources>
