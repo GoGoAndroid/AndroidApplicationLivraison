@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+<<<<<<< HEAD
     <string name="app_name">AALivraison</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -15,4 +16,21 @@
 	<string name="txtVilleCLient">Ville :</string>
 	<string name="txtSignature">Signature :</string>
 	<string name="btnValider">Valider</string>
+=======
+    <string name="app_name">Livraison</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="Detail_Mission">Détail de la mission</string>
+    <string name="Texte_Descriptif">Texte descriptif de la mission ...</string>
+    <string name="numero_camionneur">Numéro cammioneur : </string>
+    <string name="titreEcran_etatMission">Numéro cammioneur : </string>
+    <string name="livre">Livre</string>
+    <string name="non_livre">Non livre</string>
+    <string name="partiellement_livre">Partiellement livre</string>
+    <string name="validation_etatMission">Validation</string>
+    <string name="titreEcran_listeColis">Liste Colis</string>
+    <string name="liste_colis">Liste des colis</string>
+    
+
+>>>>>>> 6243375cbe509bd97891c1fed1f425af9eb5a3e9
 </resources>
