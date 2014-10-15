@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titreEcran_etatMission"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tvwNumCamionneur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/numero_camionneur"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <!-- <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android" -->
+    <!-- </RadioGroup> -->
+
+    <RadioGroup
+        android:id="@+id/radioGroupEtatMission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/radio0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/livre" />
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/non_livre" />
+
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/partiellement_livre" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnValidationEtatMission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/validation_etatMission" />
+
+</LinearLayout>
