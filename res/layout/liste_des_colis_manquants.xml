@@ -8,49 +8,49 @@
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-   
+        android:text="@string/titre_liste_colis"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <CheckBox
         android:id="@+id/checkBox1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Colis n°1" />
+        android:text="@string/colis1" />
 
     <CheckBox
         android:id="@+id/checkBox2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Colis n°2" />
+        android:text="@string/colis2" />
 
     <CheckBox
         android:id="@+id/checkBox3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Colis n°3" />
+        android:text="@string/colis3" />
 
     <CheckBox
         android:id="@+id/checkBox4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Colis n°4" />
+        android:text="@string/colis4" />
 
     <CheckBox
         android:id="@+id/checkBox5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Colis n°5" />
+        android:text="@string/colis5" />
 
     <CheckBox
         android:id="@+id/checkBox6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Colis n°6" />
+        android:text="@string/colis6" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="198dp"
         android:layout_height="wrap_content"
-        android:text="btnValider" />
+        android:text="@string/btn_valider" />
 
 </LinearLayout>
