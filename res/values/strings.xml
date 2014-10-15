@@ -34,12 +34,12 @@
 	<string name="numMission">Numéro de la mission :</string>
 	<string name="btn_DetailMission">Voir le détail de la mission</string>
 	<string name="villeDepart">Annecy</string>
-	<string name="tiret"> - </string>
-	<string name="villeArrivee">Grenoble </string>
-	<string name="aPersonneX"> à </string>
-	<string name="nomClient">GASTRIN </string>
+	<string name="tiret">-</string>
+	<string name="villeArrivee">Grenoble</string>
+	<string name="aPersonneX">à</string>
+	<string name="nomClient">GASTRIN</string>
 	<string name="prenomClient">Jason</string>
-	<string name="le"> le </string>
+	<string name="le">le</string>
 	<string name="dateLivraison">15/10/2014</string>
     <string name="colis1">Colis n°1</string>
     <string name="colis2">Colis n°2</string>
