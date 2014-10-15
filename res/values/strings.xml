@@ -23,7 +23,7 @@
     <string name="Detail_Mission">Détail de la mission</string>
     <string name="Texte_Descriptif">Texte descriptif de la mission ...</string>
     <string name="numero_camionneur">Numéro cammioneur : </string>
-    <string name="titreEcran_etatMission">Numéro cammioneur : </string>
+    <string name="titreEcran_etatMission">Etat de la mission</string>
     <string name="livre">Livre</string>
     <string name="non_livre">Non livre</string>
     <string name="partiellement_livre">Partiellement livre</string>
