@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -10,47 +11,19 @@
         android:layout_height="wrap_content"
         android:text="@string/titre_liste_colis"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <CheckBox
-        android:id="@+id/checkBox1"
+    
+    <ListView
+        android:id="@+id/listView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/colis1" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/colis2" />
-
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/colis3" />
-
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/colis4" />
-
-    <CheckBox
-        android:id="@+id/checkBox5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/colis5" />
-
-    <CheckBox
-        android:id="@+id/checkBox6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/colis6" />
+        android:layout_height="210dp"
+        android:layout_weight="0.45"
+        tools:listitem="@android:layout/simple_list_item_checked" >
+    </ListView>
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="198dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_valider" />
+        android:text="@string/btnValider" />
 
 </LinearLayout>
