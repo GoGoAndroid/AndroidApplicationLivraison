@@ -20,7 +20,7 @@
 	<string name="txtSignature">Signature :</string>
 	<string name="btnValider">Valider</string>
     <string name="Detail_Mission">Détail de la mission</string>
-    <string name="Texte_Descriptif">Texte descriptif de la mission ...</string>
+    <string name="Texte_Descriptif">Texte descriptif de la mission ..</string>
     <string name="numero_camionneur">Numéro cammioneur : </string>
     <string name="titreEcran_etatMission">Etat de la mission</string>
     <string name="livre">Livre</string>
