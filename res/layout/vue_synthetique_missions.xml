@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/villeDepart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/villeDepart" />
+
+    <TextView
+        android:id="@+id/tiret"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tiret" />
+
+    <TextView
+        android:id="@+id/villeArrivee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/villeArrivee" />
+
+    <TextView
+        android:id="@+id/aPersonneX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/aPersonneX" />
+
+    <TextView
+        android:id="@+id/nomClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nomClient" />
+
+    <TextView
+        android:id="@+id/prenomClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/prenomClient" />
+    
+    <TextView
+        android:id="@+id/le"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/le" />
+
+    <TextView
+        android:id="@+id/dateLivraison"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dateLivraison" />
+
+</LinearLayout>

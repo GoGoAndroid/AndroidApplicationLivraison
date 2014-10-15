@@ -20,7 +20,7 @@
 	<string name="txtSignature">Signature :</string>
 	<string name="btnValider">Valider</string>
     <string name="Detail_Mission">Détail de la mission</string>
-    <string name="Texte_Descriptif">Texte descriptif de la mission ...</string>
+    <string name="Texte_Descriptif">Texte descriptif de la mission ..</string>
     <string name="numero_camionneur">Numéro cammioneur : </string>
     <string name="titreEcran_etatMission">Etat de la mission</string>
     <string name="livre">Livre</string>
@@ -31,13 +31,24 @@
     <string name="liste_colis">Liste des colis</string>
 
 
+	<string name="titreEcran_listeMission">Liste des missions</string>
+	<string name="numMission">Numéro de la mission :</string>
+	<string name="btn_DetailMission">Voir le détail de la mission</string>
+	<string name="villeDepart">Annecy</string>
+	<string name="tiret"> - </string>
+	<string name="villeArrivee">Grenoble </string>
+	<string name="aPersonneX"> à </string>
+	<string name="nomClient">GASTRIN </string>
+	<string name="prenomClient">Jason</string>
+	<string name="le"> le </string>
+	<string name="dateLivraison">15/10/2014</string>
+
     <string name="colis1">Colis n°1</string>
     <string name="colis2">Colis n°2</string>
     <string name="colis3">Colis n°3</string>
     <string name="colis4">Colis n°4</string>
     <string name="colis5">Colis n°5</string>
     <string name="colis6">Colis n°6</string>
-    
 
-
+   
 </resources>
