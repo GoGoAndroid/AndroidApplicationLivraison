@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">AndroidApplicationLivraison</string>
+    <string name="app_name">Livraison</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="Detail_Mission">Détail de la mission</string>
+    <string name="Texte_Descriptif">Texte descriptif de la mission ...</string>
     <string name="numero_camionneur">Numéro cammioneur : </string>
     <string name="titreEcran_etatMission">Etat de la mission</string>
     <string name="livre">Livre</string>
@@ -12,4 +14,6 @@
     <string name="validation_etatMission">Validation</string>
     <string name="titreEcran_listeColis">Liste Colis</string>
     <string name="liste_colis">Liste des colis</string>
+    
+
 </resources>
