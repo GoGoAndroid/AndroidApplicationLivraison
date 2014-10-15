@@ -5,7 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="numero_camionneur">Numéro cammioneur : </string>
-    <string name="titreEcran_etatMission">Numéro cammioneur : </string>
+    <string name="titreEcran_etatMission">Etat de la mission</string>
     <string name="livre">Livre</string>
     <string name="non_livre">Non livre</string>
     <string name="partiellement_livre">Partiellement livre</string>
