@@ -4,5 +4,7 @@
     <string name="app_name">AndroidApplicationLivraison</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="titre_liste_colis">Liste des colis</string>
+    <string name="btn_valider">Valider</string>
 
 </resources>
