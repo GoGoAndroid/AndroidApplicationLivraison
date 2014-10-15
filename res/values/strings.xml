@@ -6,8 +6,11 @@
     <string name="app_name">AALivraison</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    
     <string name="titre_liste_colis">Liste des colis manquants</string>
+    
     <string name="btn_valider">Valider</string>
+
 	<string name="txtEntreprise">DHL Express</string>
 	<string name="txtAdresseEntreprise">280 rte Aiglière</string>
 	<string name="txtCPEntreprise">74370 Argonay</string>
@@ -18,9 +21,12 @@
 	<string name="txtCPClient">Code postal :</string>
 	<string name="txtVilleCLient">Ville :</string>
 	<string name="txtSignature">Signature :</string>
+	
 	<string name="btnValider">Valider</string>
+	
     <string name="Detail_Mission">Détail de la mission</string>
     <string name="Texte_Descriptif">Texte descriptif de la mission ..</string>
+    
     <string name="numero_camionneur">Numéro cammioneur : </string>
     <string name="titreEcran_etatMission">Etat de la mission</string>
     <string name="livre">Livre</string>
