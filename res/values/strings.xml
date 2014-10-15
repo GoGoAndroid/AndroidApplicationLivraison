@@ -29,6 +29,8 @@
     <string name="validation_etatMission">Validation</string>
     <string name="titreEcran_listeColis">Liste Colis</string>
     <string name="liste_colis">Liste des colis</string>
+    <string name="titreEcran_numMission">Liste des missions</string>
+    
 
 
 	<string name="titreEcran_listeMission">Liste des missions</string>
