@@ -7,7 +7,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="titre_liste_colis">Liste des colis manquants</string>
-    <string name="btn_valider">Valider</string>
 	<string name="txtEntreprise">DHL Express</string>
 	<string name="txtAdresseEntreprise">280 rte Aiglière</string>
 	<string name="txtCPEntreprise">74370 Argonay</string>
