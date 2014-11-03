@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import android.location.Location;
+
 import com.slam5.androidapplicationlivraison.dataModel.Adress;
 import com.slam5.androidapplicationlivraison.dataModel.Client;
 import com.slam5.androidapplicationlivraison.dataModel.Mission;
@@ -16,7 +18,7 @@ public class TestStorage {
 	public static List<Mission> livraisons=new ArrayList<Mission>();
 	public static Map<Integer,Mission> etatDesLivraison=new HashMap<Integer,Mission>();
 	public static Map<Mission,List<Produit> > produitsNonLivres=new HashMap<Mission,List<Produit> >();
-	
+	public static Location location;
 	
 	public TestStorage(){
 		Client client_1=new Client("Dupont",new Adress("Annecy","3 rue de la paix",""));
