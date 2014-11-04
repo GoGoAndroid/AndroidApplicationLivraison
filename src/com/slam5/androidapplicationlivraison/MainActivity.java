@@ -1,10 +1,16 @@
 package com.slam5.androidapplicationlivraison;
 
+import com.slam5.androidapplicationlivraison.R.id;
+
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -13,9 +19,23 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-      //  Button button=(Button) findViewById(R.id.textView2);
+        
+        RadioButton buttonLivraison=(RadioButton) findViewById(R.id.radioLivre);
+        buttonLivraison.setOnClickListener(new OnClickListener()
+        {
+
+			@Override
+			public void onClick(View view) 
+			{
+				selectionEtatMission(view);
+				
+				
+			}
+		});
+        
+        Button button=(Button) findViewById(R.id.textView2);
         // a supprimer
-      //  button.setText("toto");
+        button.setText("toto");
         
     }
 
@@ -41,7 +61,18 @@ public class MainActivity extends ActionBarActivity {
     
     public void validerEtatMission()
     {
-    	// 	getCheckedRadioButtonId()
+    	// rg1.getCheckedRadioButtonId()!=-1
+    	RadioGroup radioGroupSelectionEtatMission = (RadioGroup) findViewById(R.id.radioGroupEtatMission);
+    	int selectId = radioGroupSelectionEtatMission.getCheckedRadioButtonId();
+    	
+    	
+    	if(radioGroupSelectionEtatMission.getCheckedRadioButtonId() != 1)
+    	{
+    		RadioButton btn = (RadioButton) radioGroupSelectionEtatMission.getChildAt(selectId);
+    	    String selection = (String) btn.getText();
+    	}
+    	
+
     }
     
 

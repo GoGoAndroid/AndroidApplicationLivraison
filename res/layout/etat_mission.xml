@@ -27,20 +27,20 @@
         android:layout_height="wrap_content" >
 
         <RadioButton
-            android:id="@+id/radio0"
+            android:id="@+id/radioLivre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="@string/livre" />
 
         <RadioButton
-            android:id="@+id/radio1"
+            android:id="@+id/radioNonLivre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/non_livre" />
 
         <RadioButton
-            android:id="@+id/radio2"
+            android:id="@+id/radioPartiellementLivre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/partiellement_livre" />
