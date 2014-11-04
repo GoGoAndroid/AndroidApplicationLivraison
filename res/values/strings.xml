@@ -1,50 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-
-
+    <!-- Initialisation du projet -->
     <string name="app_name">AALivraison</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="titre_liste_colis">Liste des colis</string>
+
+    <!-- Colis manquants -->
+    <string name="titre_liste_colis">Liste des colis manquants</string>
     <string name="btn_valider">Valider</string>
-	<string name="txtEntreprise">DHL Express</string>
-	<string name="txtAdresseEntreprise">280 rte Aiglière</string>
-	<string name="txtCPEntreprise">74370 Argonay</string>
-	<string name="txtNumCommande">Numéro de commande :</string>
-	<string name="txtNomClient">Nom Client :</string>
-	<string name="txtPrenomClient">Prenom Client :</string>
-	<string name="txtAdresseClient">Adresse :</string>
-	<string name="txtCPClient">Code postal :</string>
-	<string name="txtVilleCLient">Ville :</string>
-	<string name="txtSignature">Signature :</string>
-	<string name="btnValider">Valider</string>
+
+    <!-- Bon de livraison -->
+    <string name="txtEntreprise">DHL Express</string>
+    <string name="txtAdresseEntreprise">280 rte Aiglière</string>
+    <string name="txtCPEntreprise">74370 Argonay</string>
+    <string name="txtNumCommande">Numéro de commande :</string>
+    <string name="txtNomClient">Nom Client :</string>
+    <string name="txtPrenomClient">Prenom Client :</string>
+    <string name="txtAdresseClient">Adresse :</string>
+    <string name="txtCPClient">Code postal :</string>
+    <string name="txtVilleCLient">Ville :</string>
+    <string name="txtSignature">Signature :</string>
+    <string name="btnValider">Valider</string>
+
+    <!-- Detail d'une missions -->
     <string name="Detail_Mission">Détail de la mission</string>
-    <string name="Texte_Descriptif">Texte descriptif de la mission ...</string>
+    <string name="Texte_Descriptif">Texte descriptif de la mission ..</string>
+
+    <!-- Etat de la mission -->
     <string name="numero_camionneur">Numéro cammioneur : </string>
     <string name="titreEcran_etatMission">Etat de la mission</string>
     <string name="livre">Livre</string>
     <string name="non_livre">Non livre</string>
     <string name="partiellement_livre">Partiellement livre</string>
     <string name="validation_etatMission">Validation</string>
+
+    <!-- Colis -->
     <string name="titreEcran_listeColis">Liste Colis</string>
     <string name="liste_colis">Liste des colis</string>
-	<string name="titreEcran_listeMission">Liste des missions : </string>
-	<string name="titreEcran_numMission">Numéro de la mission : </string>
-	<string name="numMission">Numéro de la mission :</string>
-	<string name="btn_DetailMission">Voir le détail de la mission</string>
-	<string name="villeDepart">Annecy</string>
-	<string name="tiret"> - </string>
-	<string name="villeArrivee">Grenoble </string>
-	<string name="aPersonneX"> à </string>
-	<string name="nomClient">GASTRIN </string>
-	<string name="prenomClient">Jason</string>
-	<string name="le"> le </string>
-	<string name="dateLivraison">15/10/2014</string>
+    <string name="titreEcran_numMission">Liste des missions</string>
+
+    <!-- Liste des missions -->
+    <string name="titreEcran_listeMission">Liste des missions</string>
+    <string name="numMission">Numéro de la mission :</string>
+    <string name="btn_DetailMission">Voir le détail de la mission</string>
+
+    <!-- Vue synthéque d'une mission -->
+    <string name="villeDepart">Annecy</string>
+    <string name="tiret">-</string>
+    <string name="villeArrivee">Grenoble</string>
+    <string name="aPersonneX">à</string>
+    <string name="nomClient">GASTRIN</string>
+    <string name="prenomClient">Jason</string>
+    <string name="le">le</string>
+    <string name="dateLivraison">15/10/2014</string>
+
+    <!-- Liste des colis -->
     <string name="colis1">Colis n°1</string>
     <string name="colis2">Colis n°2</string>
     <string name="colis3">Colis n°3</string>
     <string name="colis4">Colis n°4</string>
     <string name="colis5">Colis n°5</string>
     <string name="colis6">Colis n°6</string>
+    <string name="title_activity_detail_mission">DetailMissionActivity</string>
+
 </resources>

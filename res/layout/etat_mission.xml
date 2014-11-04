@@ -47,9 +47,9 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/btnValidationEtatMission"
+        android:id="@+id/btnValider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/validation_etatMission" />
+        android:text="@string/btnValider" />
 
 </LinearLayout>
