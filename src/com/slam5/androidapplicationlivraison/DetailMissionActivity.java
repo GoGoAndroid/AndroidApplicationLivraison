@@ -6,6 +6,7 @@ import java.util.Map;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,10 +18,14 @@ public class DetailMissionActivity extends Activity {
 	 static
 	    {
 		 descriptionDesMissions = new HashMap<Long, String>();
+		 descriptionDesMissions.put((long) 0, "Mission 0");
 		 descriptionDesMissions.put((long) 1, "Mission 1");
 		 descriptionDesMissions.put((long) 2, "Mission 2");
 		 descriptionDesMissions.put((long) 3, "Mission 3");
 		 descriptionDesMissions.put((long) 4, "Mission 4");
+		 descriptionDesMissions.put((long) 5, "Mission 5");
+		 descriptionDesMissions.put((long) 6, "Mission 6");
+		 descriptionDesMissions.put((long) 7, "Mission 7");
 	    }
 	 
 	public static int ETAT_MISSION=0;
@@ -34,9 +39,13 @@ public class DetailMissionActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		setContentView(R.layout.detail_mission);
 		 Intent intent = getIntent();
-		   idMission  = intent.getLongExtra(ListeDesMissionsActivity.NUMERO_MISSION,0);
+		   idMission  = intent.getIntExtra(ListeDesMissionsActivity.NUMERO_MISSION,0);
+		   Log.v("Mon log","Mission reçue dans la detail "+idMission);
+		   Log.v("Mon log","Decription "+descriptionDesMissions.get(idMission));
+			  
+			
 		  ((TextView) findViewById(R.id.descriptionTextView)).setText(descriptionDesMissions.get(idMission));
 
 		  Button boutonSaisieEtat=(Button) findViewById(R.id.saisieEtatButton) ;
@@ -50,7 +59,7 @@ public class DetailMissionActivity extends Activity {
 
 	             }
 	         });
-		setContentView(R.layout.detail_mission);
+		
 		
 	}
 	

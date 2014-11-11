@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -38,8 +39,11 @@ public class ListeDesMissionsActivity extends Activity{
 			public void onItemClick(AdapterView<?> parent, View view, int position,
 					long id) {
 				
+				Log.v("Mon log","Create intent");
 				Intent intent = new Intent(ListeDesMissionsActivity.this, DetailMissionActivity.class);
+				Log.v("Mon log","Put extra");
 				intent.putExtra(NUMERO_MISSION, position);
+				Log.v("Mon log","Start");
 				startActivityForResult(intent,DETAIL_MISSION);
 			}
 		    });
@@ -61,7 +65,7 @@ public class ListeDesMissionsActivity extends Activity{
 			 list.add(nomsMission[i]+" "+etatsMissions[i]);
 		 }
 		 
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity,
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 		        android.R.layout.simple_list_item_1, list);
 		liste_des_missions.setAdapter(adapter);
 	
