@@ -11,13 +11,13 @@
         android:layout_height="wrap_content"
         android:text="@string/titre_liste_colis"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-    
+
     <ListView
         android:id="@+id/listView1"
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:layout_weight="0.45"
+        android:layout_width="302dp"
+        android:layout_height="380dp"
         tools:listitem="@android:layout/simple_list_item_checked" >
+
     </ListView>
 
     <Button

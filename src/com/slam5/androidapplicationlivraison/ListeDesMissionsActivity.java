@@ -28,9 +28,11 @@ public class ListeDesMissionsActivity extends Activity{
 		
 		
 		setContentView(R.layout.liste_des_missions);
+		
 		liste_des_missions=(ListView) findViewById(R.id.numMission);
 		
 		remplissageListMissions();
+		
 		
 		liste_des_missions.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -61,7 +63,7 @@ public class ListeDesMissionsActivity extends Activity{
 			 list.add(nomsMission[i]+" "+etatsMissions[i]);
 		 }
 		 
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity,
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 		        android.R.layout.simple_list_item_1, list);
 		liste_des_missions.setAdapter(adapter);
 	
