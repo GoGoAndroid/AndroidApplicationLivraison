@@ -1,5 +1,6 @@
 package com.slam5.androidapplicationlivraison;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,7 +8,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
@@ -30,18 +34,32 @@ public class DetailMissionActivity extends Activity {
 	
 	long idMission;
 	public static String NUMERO_MISSION ="NUMERO_DE_LA_MISSION";
-		
+	
+	ListView liste_des_colis;
+	
+	public static String[] nomsColis = new String[] { "Colis 1", "Colis 2", "Colis 3", "Colis 4", "Colis 5"};
+	public static String[] qteColis = new String[] {"25", "7","13","10","3"};
+	public String[] etatsMissions = new String[] { "", "", ""};	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		setContentView(R.layout.detail_mission);
 		 Intent intent = getIntent();
 		   idMission  = intent.getLongExtra(ListeDesMissionsActivity.NUMERO_MISSION,0);
-		  ((TextView) findViewById(R.id.descriptionTextView)).setText(descriptionDesMissions.get(idMission));
+		   
+		   TextView descriptionMission=((TextView) findViewById(R.id.descriptionTextView));
+		   
+		   String valeurDeLaDescription=descriptionDesMissions.get(idMission);
+		   descriptionMission.setText(valeurDeLaDescription);
 
-		  Button boutonSaisieEtat=(Button) findViewById(R.id.saisieEtatButton) ;
+		   liste_des_colis=(ListView) findViewById(R.id.ListeColisListView);
+		   
+		   remplissageListColis();
+		   
 		  
 		  
+		   Button boutonSaisieEtat=(Button) findViewById(R.id.saisieEtatButton) ;
 		  boutonSaisieEtat.setOnClickListener(new View.OnClickListener() {
 	             public void onClick(View v) {
 	            		Intent intent = new Intent(DetailMissionActivity.this, SaisieEtatActivity.class);
@@ -50,7 +68,6 @@ public class DetailMissionActivity extends Activity {
 
 	             }
 	         });
-		setContentView(R.layout.detail_mission);
 		
 	}
 	
@@ -61,4 +78,16 @@ public class DetailMissionActivity extends Activity {
         	finish();
         }
     }
+    
+    void remplissageListColis(){
+		ArrayList<String> list = new ArrayList<String>();
+		 for (int i = 0; i < nomsColis.length; ++i) {
+			 list.add(nomsColis[i] + ", quantité : " + qteColis[i]);
+		 }
+		 
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+		        android.R.layout.simple_list_item_1, list);
+		liste_des_colis.setAdapter(adapter);
+		
+	}
 }

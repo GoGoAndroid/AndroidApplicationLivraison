@@ -32,39 +32,37 @@ public class ListeDesMissionsActivity extends Activity{
 		
 		remplissageListMissions();
 		
-		liste_des_missions.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
+		liste_des_missions.setOnItemClickListener(new AdapterView.OnItemClickListener() 
+		{
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position,
-					long id) {
-				
-				Intent intent = new Intent(ListeDesMissionsActivity.this, DetailMissionActivity.class);
-				intent.putExtra(NUMERO_MISSION, position);
-				startActivityForResult(intent,DETAIL_MISSION);
-			}
-		    });
+					long id) 
+				{
+					Intent intent = new Intent(ListeDesMissionsActivity.this, DetailMissionActivity.class);
+					intent.putExtra(NUMERO_MISSION, position);
+					startActivityForResult(intent,DETAIL_MISSION);
+				}
+		});
 		
 		Button terminerButton=(Button) findViewById(R.id.TerminerButton);
-		terminerButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            setResult(OK);
-        	finish();
-
-         }
-     });
-		 
+		terminerButton.setOnClickListener(new View.OnClickListener() 
+		{
+            public void onClick(View v) 
+            {
+            	setResult(OK);
+            	finish();
+            }
+		});
 	}
 	
 	void remplissageListMissions(){
 		ArrayList<String> list = new ArrayList<String>();
 		 for (int i = 0; i < nomsMission.length; ++i) {
-			 list.add(nomsMission[i]+" "+etatsMissions[i]);
+			 list.add(nomsMission[i]);
 		 }
-		 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity,
 		        android.R.layout.simple_list_item_1, list);
 		liste_des_missions.setAdapter(adapter);
-	
 	}
 	
     protected void onActivityResult(int requestCode, int resultCode,
