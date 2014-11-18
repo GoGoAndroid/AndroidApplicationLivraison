@@ -2,6 +2,8 @@ package com.slam5.androidapplicationlivraison;
 
 import java.util.ArrayList;
 
+import com.slam5.androidapplicationlivraison.storage.TestStorage;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -59,12 +61,15 @@ public class ListeDesMissionsActivity extends Activity{
 	
 	void remplissageListMissions(){
 		ArrayList<String> list = new ArrayList<String>();
-		 for (int i = 0; i < nomsMission.length; ++i) {
-			 list.add(nomsMission[i]+" "+etatsMissions[i]);
+		
+		TestStorage Test = new TestStorage();
+		 for (int i = 0; i < TestStorage.livraisons.size(); ++i) {
+			 list.add(TestStorage.livraisons.get(i).client.name);
 		 }
 		 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 		        android.R.layout.simple_list_item_1, list);
+		
 		liste_des_missions.setAdapter(adapter);
 	
 	}
