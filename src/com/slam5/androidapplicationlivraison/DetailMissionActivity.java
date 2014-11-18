@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.slam5.androidapplicationlivraison.storage.TestStorage;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,6 +24,7 @@ public class DetailMissionActivity extends Activity {
 	 static
 	    {
 		 descriptionDesMissions = new HashMap<Long, String>();
+		 descriptionDesMissions.put((long) 0, "Mission 0");
 		 descriptionDesMissions.put((long) 1, "Mission 1");
 		 descriptionDesMissions.put((long) 2, "Mission 2");
 		 descriptionDesMissions.put((long) 3, "Mission 3");
@@ -32,8 +36,13 @@ public class DetailMissionActivity extends Activity {
 	public static int COMPLETE=2;
 	public static int NON_LIVREE=2;
 	
+	TestStorage testStorage=new TestStorage();
+	
+	
+	
 	long idMission;
 	public static String NUMERO_MISSION ="NUMERO_DE_LA_MISSION";
+	
 	
 	ListView liste_des_colis;
 	
@@ -41,16 +50,16 @@ public class DetailMissionActivity extends Activity {
 	public static String[] qteColis = new String[] {"25", "7","13","10","3"};
 	public String[] etatsMissions = new String[] { "", "", ""};	
 	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.detail_mission);
 		 Intent intent = getIntent();
 		   idMission  = intent.getLongExtra(ListeDesMissionsActivity.NUMERO_MISSION,0);
-		   
+		   Log.v("Mes logs",""+idMission);
 		   TextView descriptionMission=((TextView) findViewById(R.id.descriptionTextView));
-		   
-		   String valeurDeLaDescription=descriptionDesMissions.get(idMission);
+		   String valeurDeLaDescription = descriptionDesMissions.get(idMission);
 		   descriptionMission.setText(valeurDeLaDescription);
 
 		   liste_des_colis=(ListView) findViewById(R.id.ListeColisListView);
