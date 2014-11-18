@@ -1,55 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+	android:layout_width="match_parent" android:layout_height="match_parent"
+	android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/titreEcran_etatMission"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+	<TextView android:id="@+id/textView1" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="@string/titreEcran_etatMission"
+		android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TextView
-        android:id="@+id/tvwNumCamionneur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/numero_camionneur"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+	<TextView android:id="@+id/tvwNumCamionneur"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:text="@string/numero_camionneur" android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <!-- <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android" -->
-    <!-- </RadioGroup> -->
+	<!-- <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android" -->
+	<!-- </RadioGroup> -->
 
-    <RadioGroup
-        android:id="@+id/radioGroupEtatMission"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+	<RadioGroup android:id="@+id/radioGroupEtatMission"
+		android:layout_width="wrap_content" android:layout_height="wrap_content">
 
-        <RadioButton
-            android:id="@+id/radioLivre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/livre" />
+		<RadioButton android:id="@+id/radioLivre"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:checked="true" android:text="@string/livre" />
 
-        <RadioButton
-            android:id="@+id/radioNonLivre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/non_livre" />
+		<RadioButton android:id="@+id/radioNonLivre"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:text="@string/non_livre" />
 
-        <RadioButton
-            android:id="@+id/radioPartiellementLivre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/partiellement_livre" />
-    </RadioGroup>
+		<RadioButton android:id="@+id/radioPartiellementLivre"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:text="@string/partiellement_livre" />
+	</RadioGroup>
 
-    <Button
-        android:id="@+id/btnValider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btnValider" />
+	<Button
+	    android:id="@+id/btnValider"
+	    android:layout_width="102dp"
+	    android:layout_height="wrap_content"
+	    android:text="@string/btnValider" />
+
+	<Button android:id="@+id/btnAjoutColisManquant"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:text="Ajouter Colis Manquant" />
+	
+	    <include
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        layout="@layout/liste_colis" >
+    </include>
+	
+<!-- 
+	<EditText android:id="@+id/etx_ColisManquant"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:hint="colisManquant_hint" android:inputType="text"
+		android:text="colisManquant" />
+ -->
+
+	<Spinner
+	    android:id="@+id/spinner1"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" />
 
 </LinearLayout>
