@@ -34,10 +34,11 @@ public class DetailMissionActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		setContentView(R.layout.detail_mission);
 		 Intent intent = getIntent();
 		   idMission  = intent.getLongExtra(ListeDesMissionsActivity.NUMERO_MISSION,0);
-		  ((TextView) findViewById(R.id.descriptionTextView)).setText(descriptionDesMissions.get(idMission));
+			  String text=descriptionDesMissions.get(idMission);
+		  ((TextView) findViewById(R.id.descriptionTextView)).setText(text);
 
 		  Button boutonSaisieEtat=(Button) findViewById(R.id.saisieEtatButton) ;
 		  
@@ -50,7 +51,7 @@ public class DetailMissionActivity extends Activity {
 
 	             }
 	         });
-		setContentView(R.layout.detail_mission);
+	
 		
 	}
 	
