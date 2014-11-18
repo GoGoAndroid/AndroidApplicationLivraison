@@ -57,10 +57,15 @@ public class DetailMissionActivity extends Activity {
 		setContentView(R.layout.detail_mission);
 		 Intent intent = getIntent();
 		   idMission  = intent.getLongExtra(ListeDesMissionsActivity.NUMERO_MISSION,0);
+<<<<<<< HEAD
 		   Log.v("Mes logs",""+idMission);
 		   TextView descriptionMission=((TextView) findViewById(R.id.descriptionTextView));
 		   String valeurDeLaDescription = descriptionDesMissions.get(idMission);
 		   descriptionMission.setText(valeurDeLaDescription);
+=======
+			  String text=descriptionDesMissions.get(idMission);
+		  ((TextView) findViewById(R.id.descriptionTextView)).setText(text);
+>>>>>>> 3b53023012008a8e8257fbb9218c8a9e70756206
 
 		   liste_des_colis=(ListView) findViewById(R.id.ListeColisListView);
 		   
@@ -77,6 +82,10 @@ public class DetailMissionActivity extends Activity {
 
 	             }
 	         });
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 3b53023012008a8e8257fbb9218c8a9e70756206
 		
 	}
 	
