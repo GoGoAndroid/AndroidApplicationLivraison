@@ -5,4 +5,8 @@ project.properties
 .classpath
 .settings
 .project
+lint.xml
+<<<<<<< HEAD
+=======
 
+>>>>>>> hugo2
