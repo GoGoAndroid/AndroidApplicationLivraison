@@ -61,7 +61,7 @@ public class ListeDesMissionsActivity extends Activity{
 			 list.add(nomsMission[i]+" "+etatsMissions[i]);
 		 }
 		 
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity,
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 		        android.R.layout.simple_list_item_1, list);
 		liste_des_missions.setAdapter(adapter);
 	
