@@ -16,13 +16,8 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-<<<<<<< HEAD
-            android:name=".MainActivity"
-            android:label="@string/app_name" >            
-=======
-            android:name=".ListeDesMissionsActivity"
+            android:name=".LocalisationActivity"
             android:label="@string/app_name" >
->>>>>>> b9ee4c6ffb82a1b613c06d7a2764abfbee0fc4a9
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
