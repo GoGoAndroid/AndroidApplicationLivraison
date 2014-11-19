@@ -63,5 +63,11 @@
     <string name="colis5">Colis n°5</string>
     <string name="colis6">Colis n°6</string>
     <string name="title_activity_detail_mission">DetailMissionActivity</string>
+    
+    <!--  Vue de la localisation -->
+    <string name="tvLatitudeLibelle">Latitude :</string>
+    <string name="tvLatitude">45.9</string>
+    <string name="tvLongitudeLibelle">Longitude :</string>
+    <string name="tvLongitude">6.1167</string>
 
 </resources>
