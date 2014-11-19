@@ -96,15 +96,9 @@ public class DetailMissionActivity extends Activity {
 			 	}
 			 	
 				if (mission == null){
-					 
+					 Log.v("monTag", "Il n'y a aucun colis.");
 				}
 		 }
-		 
-	
-			 
-//		 for (int i = 0; i < nomsColis.length; ++i) {
-//			 list.add(nomsColis[i] + ", quantité : " + qteColis[i]);
-//		 }
 		
 		 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
