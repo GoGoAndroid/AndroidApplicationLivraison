@@ -86,16 +86,22 @@ public class DetailMissionActivity extends Activity {
 	void remplissageListColis(){
 		ArrayList<String> list = new ArrayList<String>();
 		
-		Mission mission;
+		Mission mission=null;
 		 for (int i = 0; i < TestStorage.livraisons.size(); ++i) {
 			 
 			 Mission uneMission=TestStorage.livraisons.get(i);
-			 
-			 	if(uneMission.id == (int)idMission)
-			 	{
+			 	if (uneMission.id == (int)idMission){
 			 		mission  = uneMission;
+			 		break;
 			 	}
+			 	
+				if (mission == null){
+					 
+				}
 		 }
+		 
+	
+			 
 //		 for (int i = 0; i < nomsColis.length; ++i) {
 //			 list.add(nomsColis[i] + ", quantité : " + qteColis[i]);
 //		 }
