@@ -14,11 +14,8 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-<<<<<<< HEAD
+
             android:name=".DetailMissionActivity"
-=======
-            android:name=".ListeDesMissionsActivity"
->>>>>>> 3b53023012008a8e8257fbb9218c8a9e70756206
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,15 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
+
          <activity
             android:name=".SaisieEtatActivity"
             android:label="idEtatSaisie" >
-=======
-        <activity
-            android:name=".DetailMissionActivity"
-            android:label="DetailsMission" >
->>>>>>> 3b53023012008a8e8257fbb9218c8a9e70756206
+
         </activity>
        
     </application>
