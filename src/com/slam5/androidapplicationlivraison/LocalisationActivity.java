@@ -1,13 +1,14 @@
 package com.slam5.androidapplicationlivraison;
 
 import com.slam5.androidapplicationlivraison.storage.TestStorage;
-
+import android.app.Activity;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 
-public class LocalisationActivity {
+public class LocalisationActivity extends Activity {
+	Activity activity;
 	LocationListener locationListener = new LocationListener() {
 		@Override
 	    public void onLocationChanged(Location location) {
