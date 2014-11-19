@@ -3,6 +3,7 @@ package com.slam5.androidapplicationlivraison.dataModel;
 import java.util.Map;
 
 public class Mission {
+	public int id;
 	public Client client;
 	public String description;
 	public Map<Produit,Integer> produitsQte;

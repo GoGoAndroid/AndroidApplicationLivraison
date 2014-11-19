@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.slam5.androidapplicationlivraison.dataModel.Mission;
 import com.slam5.androidapplicationlivraison.storage.TestStorage;
 
 import android.app.Activity;
@@ -35,7 +36,7 @@ public class DetailMissionActivity extends Activity {
 	public static int PARTIELLE=1;
 	public static int COMPLETE=2;
 	public static int NON_LIVREE=2;
-	
+	TestStorage Test = new TestStorage();
 	TestStorage testStorage=new TestStorage();
 	
 	
@@ -82,6 +83,31 @@ public class DetailMissionActivity extends Activity {
 		
 	}
 	
+	void remplissageListColis(){
+		ArrayList<String> list = new ArrayList<String>();
+		
+		Mission mission;
+		 for (int i = 0; i < TestStorage.livraisons.size(); ++i) {
+			 
+			 Mission uneMission=TestStorage.livraisons.get(i);
+			 
+			 	if(uneMission.id == (int)idMission)
+			 	{
+			 		mission  = uneMission;
+			 	}
+		 }
+//		 for (int i = 0; i < nomsColis.length; ++i) {
+//			 list.add(nomsColis[i] + ", quantité : " + qteColis[i]);
+//		 }
+		
+		 
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+		        android.R.layout.simple_list_item_1, list);
+		
+		liste_des_colis.setAdapter(adapter);
+	
+	}
+	
     protected void onActivityResult(int requestCode, int resultCode,
             Intent data) {
         if (requestCode == ETAT_MISSION) {
@@ -90,15 +116,16 @@ public class DetailMissionActivity extends Activity {
         }
     }
     
-    void remplissageListColis(){
-		ArrayList<String> list = new ArrayList<String>();
-		 for (int i = 0; i < nomsColis.length; ++i) {
-			 list.add(nomsColis[i] + ", quantité : " + qteColis[i]);
-		 }
-		 
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-		        android.R.layout.simple_list_item_1, list);
-		liste_des_colis.setAdapter(adapter);
-		
-	}
+//    void remplissageListColis(){
+//		ArrayList<String> list = new ArrayList<String>();
+//		 for (int i = 0; i < nomsColis.length; ++i) {
+//			 list.add(nomsColis[i] + ", quantité : " + qteColis[i]);
+//		 }
+//		 
+//		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+//		        android.R.layout.simple_list_item_1, list);
+//		liste_des_colis.setAdapter(adapter);
+//		
+//	}
+    
 }
