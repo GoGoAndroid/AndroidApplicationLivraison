@@ -2,6 +2,8 @@ package com.slam5.androidapplicationlivraison;
 
 import java.util.ArrayList;
 
+import com.slam5.androidapplicationlivraison.storage.TestStorage;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -69,16 +71,8 @@ public class ListeDesMissionsActivity extends Activity{
 		        android.R.layout.simple_list_item_1, list);
 		liste_des_missions.setAdapter(adapter);
 	
+
 	}
 	
-    protected void onActivityResult(int requestCode, int resultCode,
-            Intent data) {
-        if (requestCode == DETAIL_MISSION) {
-            if (resultCode == START_MISSION) {
-            	remplissageListMissions();
-            }
-        }
-    }
-    
 
 }

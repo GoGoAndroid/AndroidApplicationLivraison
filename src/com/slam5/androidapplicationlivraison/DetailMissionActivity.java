@@ -1,14 +1,21 @@
 package com.slam5.androidapplicationlivraison;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.slam5.androidapplicationlivraison.dataModel.Mission;
+import com.slam5.androidapplicationlivraison.storage.TestStorage;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
@@ -32,15 +39,28 @@ public class DetailMissionActivity extends Activity {
 	public static int PARTIELLE=1;
 	public static int COMPLETE=2;
 	public static int NON_LIVREE=2;
+	TestStorage Test = new TestStorage();
+	TestStorage testStorage=new TestStorage();
+	
+	
 	
 	long idMission;
 	public static String NUMERO_MISSION ="NUMERO_DE_LA_MISSION";
-		
+	
+	
+	ListView liste_des_colis;
+	
+	public static String[] nomsColis = new String[] { "Colis 1", "Colis 2", "Colis 3", "Colis 4", "Colis 5"};
+	public static String[] qteColis = new String[] {"25", "7","13","10","3"};
+	public String[] etatsMissions = new String[] { "", "", ""};	
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.detail_mission);
 		 Intent intent = getIntent();
+
 		   idMission  = intent.getIntExtra(ListeDesMissionsActivity.NUMERO_MISSION,0);
 		   Log.v("Mon log","Mission reçue dans la detail "+idMission);
 		   Log.v("Mon log","Decription "+descriptionDesMissions.get(idMission));
@@ -48,9 +68,20 @@ public class DetailMissionActivity extends Activity {
 			
 		  ((TextView) findViewById(R.id.descriptionTextView)).setText(descriptionDesMissions.get(idMission));
 
-		  Button boutonSaisieEtat=(Button) findViewById(R.id.saisieEtatButton) ;
+
+		   Log.v("Mes logs",""+idMission);
+		   TextView descriptionMission=((TextView) findViewById(R.id.descriptionTextView));
+		   String valeurDeLaDescription = descriptionDesMissions.get(idMission);
+		   descriptionMission.setText(valeurDeLaDescription);
+
+
+		   liste_des_colis=(ListView) findViewById(R.id.ListeColisListView);
+		   
+		   remplissageListColis();
+		   
 		  
 		  
+		   Button boutonSaisieEtat=(Button) findViewById(R.id.saisieEtatButton) ;
 		  boutonSaisieEtat.setOnClickListener(new View.OnClickListener() {
 	             public void onClick(View v) {
 	            		Intent intent = new Intent(DetailMissionActivity.this, SaisieEtatActivity.class);
@@ -59,8 +90,33 @@ public class DetailMissionActivity extends Activity {
 
 	             }
 	         });
+
 		
+	}
+	
+	void remplissageListColis(){
+		ArrayList<String> list = new ArrayList<String>();
 		
+		Mission mission=null;
+		 for (int i = 0; i < TestStorage.livraisons.size(); ++i) {
+			 
+			 Mission uneMission=TestStorage.livraisons.get(i);
+			 	if (uneMission.id == (int)idMission){
+			 		mission  = uneMission;
+			 		break;
+			 	}
+			 	
+				if (mission == null){
+					 Log.v("monTag", "Il n'y a aucun colis.");
+				}
+		 }
+		
+		 
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+		        android.R.layout.simple_list_item_1, list);
+		
+		liste_des_colis.setAdapter(adapter);
+	
 	}
 	
     protected void onActivityResult(int requestCode, int resultCode,
@@ -70,4 +126,17 @@ public class DetailMissionActivity extends Activity {
         	finish();
         }
     }
+    
+//    void remplissageListColis(){
+//		ArrayList<String> list = new ArrayList<String>();
+//		 for (int i = 0; i < nomsColis.length; ++i) {
+//			 list.add(nomsColis[i] + ", quantit� : " + qteColis[i]);
+//		 }
+//		 
+//		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+//		        android.R.layout.simple_list_item_1, list);
+//		liste_des_colis.setAdapter(adapter);
+//		
+//	}
+    
 }

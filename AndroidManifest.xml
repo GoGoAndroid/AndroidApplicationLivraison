@@ -20,6 +20,7 @@
         <activity
             android:name=".ListeDesMissionsActivity"
             android:label="Liste des missions" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -28,6 +29,7 @@
 	  
           
         </activity>
+
         <activity
             android:name=".DetailMissionActivity"
             android:label="Détail de la mission" >
@@ -35,7 +37,9 @@
         <activity
             android:name=".SaisieEtatActivity"
             android:label="Saisie de l'état" >
+
         </activity>
+       
     </application>
 
 </manifest>
