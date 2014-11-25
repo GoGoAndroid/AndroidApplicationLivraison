@@ -95,7 +95,6 @@ public class DetailMissionActivity extends Activity {
 		        android.R.layout.simple_list_item_1, list);
 		
 		liste_des_colis.setAdapter(adapter);
-	
 	}
 	
 	Mission getMission(int id){
@@ -106,6 +105,7 @@ public class DetailMissionActivity extends Activity {
 			 
 			 	if (uneMission.id == id){
 			 		mission  = uneMission;
+					 Log.v("monTag", "Mission trouvée.");
 			 		break;
 			 	}
 		 }
