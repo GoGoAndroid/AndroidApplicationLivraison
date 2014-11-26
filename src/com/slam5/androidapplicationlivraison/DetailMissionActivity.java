@@ -12,7 +12,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -30,9 +29,6 @@ public class DetailMissionActivity extends Activity {
 		 descriptionDesMissions.put((long) 2, "Mission 2");
 		 descriptionDesMissions.put((long) 3, "Mission 3");
 		 descriptionDesMissions.put((long) 4, "Mission 4");
-		 descriptionDesMissions.put((long) 5, "Mission 5");
-		 descriptionDesMissions.put((long) 6, "Mission 6");
-		 descriptionDesMissions.put((long) 7, "Mission 7");
 	    }
 	 
 	public static int ETAT_MISSION=0;
@@ -60,14 +56,7 @@ public class DetailMissionActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.detail_mission);
 		 Intent intent = getIntent();
-
-		   idMission  = intent.getIntExtra(ListeDesMissionsActivity.NUMERO_MISSION,0);
-		   Log.v("Mon log","Mission re√ßue dans la detail "+idMission);
-		   Log.v("Mon log","Decription "+descriptionDesMissions.get(idMission));
-			  
-			
-		  ((TextView) findViewById(R.id.descriptionTextView)).setText(descriptionDesMissions.get(idMission));
-
+		   idMission  = intent.getLongExtra(ListeDesMissionsActivity.NUMERO_MISSION,0);
 
 		   Log.v("Mes logs",""+idMission);
 		   TextView descriptionMission=((TextView) findViewById(R.id.descriptionTextView));
@@ -90,33 +79,37 @@ public class DetailMissionActivity extends Activity {
 
 	             }
 	         });
-
 		
 	}
 	
 	void remplissageListColis(){
 		ArrayList<String> list = new ArrayList<String>();
 		
-		Mission mission=null;
-		 for (int i = 0; i < TestStorage.livraisons.size(); ++i) {
-			 
-			 Mission uneMission=TestStorage.livraisons.get(i);
-			 	if (uneMission.id == (int)idMission){
-			 		mission  = uneMission;
-			 		break;
-			 	}
-			 	
-				if (mission == null){
-					 Log.v("monTag", "Il n'y a aucun colis.");
-				}
-		 }
+		Mission mission=getMission((int) idMission);
+
+		if (mission == null){
+				 Log.v("monTag", "Il n'y a aucun colis.");
+		}
 		
-		 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 		        android.R.layout.simple_list_item_1, list);
 		
 		liste_des_colis.setAdapter(adapter);
+	}
 	
+	Mission getMission(int id){
+		Mission mission=null;
+		 for (int i = 0; i < TestStorage.livraisons.size(); ++i) {
+			 
+			 Mission uneMission=TestStorage.livraisons.get(i);
+			 
+			 	if (uneMission.id == id){
+			 		mission  = uneMission;
+					 Log.v("monTag", "Mission trouvÈe.");
+			 		break;
+			 	}
+		 }
+			return mission;
 	}
 	
     protected void onActivityResult(int requestCode, int resultCode,
@@ -127,10 +120,12 @@ public class DetailMissionActivity extends Activity {
         }
     }
     
+    
+    
 //    void remplissageListColis(){
 //		ArrayList<String> list = new ArrayList<String>();
 //		 for (int i = 0; i < nomsColis.length; ++i) {
-//			 list.add(nomsColis[i] + ", quantitÔøΩ : " + qteColis[i]);
+//			 list.add(nomsColis[i] + ", quantitÈ : " + qteColis[i]);
 //		 }
 //		 
 //		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
