@@ -12,7 +12,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/tvLatitude"
+        android:id="@+id/tvLatitudeValeur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="45.9" />
@@ -25,9 +25,15 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/tvLongitude"
+        android:id="@+id/tvLongitudeValeur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="6.1167" />
+
+    <Button
+        android:id="@+id/btnRetour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retour" />
 
 </LinearLayout>
