@@ -6,13 +6,20 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class LocalisationActivity extends Activity {
 	Activity activity;
+	TextView lblLatitudeLib;
+	TextView lblLatitudeVal;
+	TextView lblLongitudeLib;
+	TextView lblLongitudeVal;
 	LocationListener locationListener = new LocationListener() {
 		@Override
 	    public void onLocationChanged(Location location) {
 			TestStorage.location = location;
+			location.getLatitude();
+			location.getLongitude();
 	    }
 
 		@Override
@@ -33,7 +40,12 @@ public class LocalisationActivity extends Activity {
 	
 	LocationManager locationManger;
 	protected void onCreate(Bundle savedInstanceState){
-		
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.vue_localisation);
+		lblLatitudeLib=(TextView) findViewById(R.id.tvLatitudeLibelle);
+		lblLatitudeVal=(TextView) findViewById(R.id.tvLatitudeValeur);
+		lblLongitudeLib=(TextView) findViewById(R.id.tvLongitudeLibelle);
+		lblLongitudeVal=(TextView) findViewById(R.id.tvLongitudeValeur);
 	}
 	protected void onResume() {
 	    super.onResume();
