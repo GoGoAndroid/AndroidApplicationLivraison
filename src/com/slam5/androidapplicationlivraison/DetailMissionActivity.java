@@ -1,11 +1,16 @@
 package com.slam5.androidapplicationlivraison;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import com.slam5.androidapplicationlivraison.dataModel.Mission;
+import com.slam5.androidapplicationlivraison.storage.TestStorage;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -35,31 +40,39 @@ public class DetailMissionActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.detail_mission);
+		   Log.v("Mes_logs", "DetailMissionActivity started");
 		 Intent intent = getIntent();
 		   idMission  = intent.getLongExtra(ListeDesMissionsActivity.NUMERO_MISSION,0);
-			  String text=descriptionDesMissions.get(idMission);
-		  ((TextView) findViewById(R.id.descriptionTextView)).setText(text);
+		   Log.v("Mes_logs"," idMission : "+ idMission );
+		   
+		   TestStorage database = new TestStorage();
+		   List<Mission> missions = database.livraisons;
+		   
+		   for(int i=0 ; i < missions.size(); ++i )
+		   {
+			   
+			   Mission mission_temp = missions.get(i);
+			   Log.v("Mes_Logs", "Mission_temp : " + mission_temp.id);
+			   if (mission_temp.id == idMission)
+			   {
+				   Log.v("Mes_logs", "Mission trouvée");
+				   
+				   mission_temp.etat = "Livré";
+				   Log.v("Mes_logs", "Etat changé");
+				   
+				   break;
+			   }
+			   
+			   
+		   }
+		   
+		Log.v("Mes_logs", "DetailMission onCreate Finish");
+		finish();
+		
 
-		  Button boutonSaisieEtat=(Button) findViewById(R.id.saisieEtatButton) ;
-		  
-		  
-		  boutonSaisieEtat.setOnClickListener(new View.OnClickListener() {
-	             public void onClick(View v) {
-	            		Intent intent = new Intent(DetailMissionActivity.this, SaisieEtatActivity.class);
-	    				intent.putExtra(NUMERO_MISSION, idMission);
-	    				startActivityForResult(intent,ETAT_MISSION);
-
-	             }
-	         });
 	
 		
 	}
 	
-    protected void onActivityResult(int requestCode, int resultCode,
-            Intent data) {
-        if (requestCode == ETAT_MISSION) {
-        	setResult(resultCode);
-        	finish();
-        }
-    }
+
 }

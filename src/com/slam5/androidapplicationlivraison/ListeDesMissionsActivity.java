@@ -2,9 +2,12 @@ package com.slam5.androidapplicationlivraison;
 
 import java.util.ArrayList;
 
+import com.slam5.androidapplicationlivraison.storage.TestStorage;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,16 +19,17 @@ public class ListeDesMissionsActivity extends Activity{
 	ListView liste_des_missions;
 	Activity activity;
 	public static String[] nomsMission = new String[] { "Mission 1", "Mission 2", "Mission 3"};
-	public String[] etatsMissions = new String[] { "", "", ""};
+	public String[] etatsMissions = new String[] { "livré", "partiellement livré", "non livré"};
 	
 	public static int DETAIL_MISSION=0;
 	public static int START_MISSION=1;
 	public static String NUMERO_MISSION ="NUMERO_DE_LA_MISSION";
 	public static int OK=999;
+	ArrayList<String> list = new ArrayList<String>();
 	
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		
+		Log.v("Mes_logs","Starting onCReate");
 		
 		setContentView(R.layout.liste_des_missions);
 		
@@ -41,8 +45,12 @@ public class ListeDesMissionsActivity extends Activity{
 					long id) {
 				
 				Intent intent = new Intent(ListeDesMissionsActivity.this, DetailMissionActivity.class);
-				intent.putExtra(NUMERO_MISSION, position);
+				Log.v("Mes_logs", "intent crée");
+				intent.putExtra(NUMERO_MISSION, (long)(position+1));
+				Log.v("Mes_logs", "putExtra ");
+				Log.v("Mes_logs", " start activity for result");
 				startActivityForResult(intent,DETAIL_MISSION);
+			
 			}
 		    });
 		
@@ -54,28 +62,35 @@ public class ListeDesMissionsActivity extends Activity{
 
          }
      });
+		
+		
 		 
 	}
 	
 	void remplissageListMissions(){
-		ArrayList<String> list = new ArrayList<String>();
-		 for (int i = 0; i < nomsMission.length; ++i) {
-			 list.add(nomsMission[i]+" "+etatsMissions[i]);
+		
+		
+		TestStorage Test = new TestStorage();
+		 for (int i = 0; i < TestStorage.livraisons.size(); ++i) {
+			 list.add(TestStorage.livraisons.get(i).client.name + "-" + TestStorage.livraisons.get(i).etat);
 		 }
 		 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 		        android.R.layout.simple_list_item_1, list);
+		
 		liste_des_missions.setAdapter(adapter);
 	
 	}
 	
+	
+	
     protected void onActivityResult(int requestCode, int resultCode,
-            Intent data) {
-        if (requestCode == DETAIL_MISSION) {
-            if (resultCode == START_MISSION) {
-            	remplissageListMissions();
-            }
-        }
+            Intent data) { 
+    	Log.v("Mes_logs", "ListeDesMissionsActivity onActivityResult");
+
+        list.clear();
+    	remplissageListMissions();
+    
     }
     
 
