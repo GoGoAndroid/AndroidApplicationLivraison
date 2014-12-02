@@ -23,7 +23,7 @@ public class BonDeLivraisonActivity extends Activity
 	{
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.bon_de_livraison);
-	    liste_bon_de_livraison=(ListView) findViewById(R.id.listColisListView);
+	    liste_bon_de_livraison=(ListView) findViewById(R.id.listBonDeLivraisonlistView);
 	    liste_bon_de_livraison.setVisibility(View.INVISIBLE);
 		ArrayList<String> list = new ArrayList<String>();
 		
