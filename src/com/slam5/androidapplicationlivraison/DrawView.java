@@ -32,11 +32,22 @@ public class DrawView extends View implements OnTouchListener {
 	@Override
 	public void onDraw(Canvas canvas) {
 		for (Point point : points) {
-			canvas.drawCircle(point.x, point.y, 5, paint);
+			canvas.drawCircle(point.x, point.y, 3, paint);
+			for () {
+			canvas.drawLine(startX, startY, stopX, stopY, paint);
+			}
 			// Log.d(TAG, "Painting: "+point);
 		}
 	}
-
+	
+	public void drawLine (float startX, float startY, float stopX, float stopY, Paint paint){
+		
+	}
+	
+	public void refresh(){
+		invalidate();
+	}
+	
 	public boolean onTouch(View view, MotionEvent event) {
 		// if(event.getAction() != MotionEvent.ACTION_DOWN)
 		// return super.onTouchEvent(event);

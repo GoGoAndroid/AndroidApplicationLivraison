@@ -24,7 +24,8 @@ public class SignatureActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				maSignature.points.clear();				
+				maSignature.points.clear();	
+				maSignature.refresh();
 			}
 			});
 	}
