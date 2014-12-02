@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.slam5.androidapplicationlivraison.dataModel.Mission;
+import com.slam5.androidapplicationlivraison.dataModel.Produit;
 import com.slam5.androidapplicationlivraison.storage.TestStorage;
 
 import android.app.Activity;
@@ -57,8 +58,8 @@ public class DetailMissionActivity extends Activity {
 		setContentView(R.layout.detail_mission);
 		 Intent intent = getIntent();
 		   idMission  = intent.getLongExtra(ListeDesMissionsActivity.NUMERO_MISSION,0);
-
-		   Log.v("Mes logs",""+idMission);
+		   idMission++;
+		   Log.v("Mes logs","id récuperé = "+idMission);
 		   TextView descriptionMission=((TextView) findViewById(R.id.descriptionTextView));
 		   String valeurDeLaDescription = descriptionDesMissions.get(idMission);
 		   descriptionMission.setText(valeurDeLaDescription);
@@ -84,9 +85,14 @@ public class DetailMissionActivity extends Activity {
 	
 	void remplissageListColis(){
 		ArrayList<String> list = new ArrayList<String>();
-		
+		Log.v("monTag", "J'apelle getMission.");
 		Mission mission=getMission((int) idMission);
-
+		
+		 for (Produit produit: mission.produitsQte.keySet() ) {
+			 int qte = mission.produitsQte.get(produit);
+			 
+			 		 }
+		
 		if (mission == null){
 				 Log.v("monTag", "Il n'y a aucun colis.");
 		}
@@ -99,11 +105,13 @@ public class DetailMissionActivity extends Activity {
 	
 	Mission getMission(int id){
 		Mission mission=null;
+		Log.v("monTag", "J'entre getMission.");
 		 for (int i = 0; i < TestStorage.livraisons.size(); ++i) {
-			 
+		
 			 Mission uneMission=TestStorage.livraisons.get(i);
-			 
+			 Log.v("monTag", "JComparaison entre "+TestStorage.livraisons.get(i).id + " et "+id);
 			 	if (uneMission.id == id){
+			 		
 			 		mission  = uneMission;
 					 Log.v("monTag", "Mission trouvée.");
 			 		break;

@@ -1,16 +1,19 @@
 package com.slam5.androidapplicationlivraison;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
+import android.content.Intent;
+
+
 import android.os.Bundle;
-<<<<<<< HEAD
-=======
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
->>>>>>> prototype_1
 import android.widget.ListView;
+
 
 public class ListeDesMissionsActivity extends Activity{
 
@@ -42,7 +45,9 @@ public class ListeDesMissionsActivity extends Activity{
 				Log.v("Mon log","Create intent");
 				Intent intent = new Intent(ListeDesMissionsActivity.this, DetailMissionActivity.class);
 				Log.v("Mon log","Put extra");
-				intent.putExtra(NUMERO_MISSION, position);
+				intent.putExtra(NUMERO_MISSION, (long)position);
+				
+				Log.v("mon log", "num mission = " + position);
 				Log.v("Mon log","Start");
 				startActivityForResult(intent,DETAIL_MISSION);
 			}
