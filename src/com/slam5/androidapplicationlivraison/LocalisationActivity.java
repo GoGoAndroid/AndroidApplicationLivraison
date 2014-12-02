@@ -50,7 +50,7 @@ public class LocalisationActivity extends Activity {
 	protected void onResume() {
 	    super.onResume();
 	    locationManger = (LocationManager) this.getSystemService(LOCATION_SERVICE);
-	    locationManger.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 10000, 0, locationListener);
+	    locationManger.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10000, 0, locationListener);
 	}
 	protected void onPause() {
 	    super.onPause();
