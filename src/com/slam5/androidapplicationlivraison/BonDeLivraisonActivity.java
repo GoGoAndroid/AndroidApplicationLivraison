@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.slam5.androidapplicationlivraison.dataModel.Mission;
+import com.slam5.androidapplicationlivraison.dataModel.Produit;
 import com.slam5.androidapplicationlivraison.storage.TestStorage;
 import android.app.Activity;
 import android.content.Intent;
@@ -31,23 +32,48 @@ public class BonDeLivraisonActivity extends Activity
 		long idMissionCourante = monIntent.getLongExtra(ListeDesMissionsActivity.NUMERO_MISSION,0);
 		
 		List<Mission> listMissions=TestStorage.livraisons;
-		Mission mission=null;
+		Mission maMission=null;
 		
 		for (int i = 0; i < listMissions.size(); ++i) 
 		{
 			Mission mission_temp =listMissions.get(i);
 			if(mission_temp.id==idMission)
 			{
-				mission=mission_temp;
+				maMission=mission_temp;
 				break;
 			}
 		}
-		if(mission==null )
+		
+		if(maMission==null )
 		{
 			Log.v("Mes logs","L'activité est null , ce n'est pas prévu");
 		}
+		else
+		{
+			for(Produit leProduit : maMission.produitsQte.keySet() )
+			{
+				//créer adapteur
+				list.add();
+				
+			}
+		}
+		
+		
+		
+		TextView txtNumCommande=(TextView) findViewById(R.id.txtNumCommande);
+		txtNumCommande.setText(maMission.id);
+		
 		TextView txtNomClient=(TextView) findViewById(R.id.txtNomClient);
-		txtNomClient.setText(mission.client.name) ;
+		txtNomClient.setText(maMission.client.name) ;
+		
+		TextView txtAdresseClient=(TextView) findViewById(R.id.txtAdresseClient);
+		txtAdresseClient.setText(maMission.client.adress.adress_1);
+		
+		TextView txtCPClient=(TextView) findViewById(R.id.txtCPClient);
+		txtCPClient.setText(maMission.client.adress.adress_2);
+		
+		TextView txtVilleClient = (TextView) findViewById(R.id.txtVilleClient);
+		txtVilleClient.setText(maMission.client.adress.city);
 
 	         
 	}
