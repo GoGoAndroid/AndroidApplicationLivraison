@@ -30,10 +30,9 @@ public class TestStorage {
 		produitsQte_1.put(new Produit("Casserolle","AA"), 2);
 		produitsQte_1.put(new Produit("Verre","BB"), 10);
 		produitsQte_1.put(new Produit("Sucre","BB"), 500);
-		
+
 		livraisons.add(new Mission(1, "", "Première mission",client_1,produitsQte_1));
-		
-		
+
 		Map<Produit,Integer> produitsQte_2=new HashMap<Produit,Integer>();
 		
 		produitsQte_2.put(new Produit("Orange","AA1"), 12);
@@ -41,7 +40,6 @@ public class TestStorage {
 		produitsQte_2.put(new Produit("Pomme","B1"), 50);
 		
 		livraisons.add(new Mission(2, "", "Deuxième mission",client_2,produitsQte_2));
-	
 		
 		Map<Produit,Integer> produitsQte_3=new HashMap<Produit,Integer>();
 		
@@ -50,8 +48,6 @@ public class TestStorage {
 		produitsQte_3.put(new Produit("Table","B33"), 54);
 		
 		livraisons.add(new Mission(3, "", "Troisème mission",client_3,produitsQte_3));
-	
-		
 		
 	}
 	

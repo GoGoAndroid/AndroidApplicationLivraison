@@ -5,8 +5,8 @@ project.properties
 .classpath
 .settings
 .project
-lint.xml
-<<<<<<< HEAD
-=======
-
->>>>>>> hugo2
+#src/com/slam5/androidapplicationlivraison/BonDeLivraisonActivity.java
+#src/com/slam5/androidapplicationlivraison/ListeDesMissionsActivity.java
+#src/com/slam5/androidapplicationlivraison/Localisation.java
+#src/com/slam5/androidapplicationlivraison/LocalisationActivity.java
+#src/com/slam5/androidapplicationlivraison/SaisieEtatActivity.java
