@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 public class ListeDesMissionsActivity extends Activity{
@@ -26,6 +27,7 @@ public class ListeDesMissionsActivity extends Activity{
 	public static String NUMERO_MISSION ="NUMERO_DE_LA_MISSION";
 	public static int OK=999;
 	ArrayList<String> list = new ArrayList<String>();
+	TestStorage database = new TestStorage();
 	
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -70,16 +72,18 @@ public class ListeDesMissionsActivity extends Activity{
 	void remplissageListMissions(){
 		
 		
-		TestStorage Test = new TestStorage();
+		
 		 for (int i = 0; i < TestStorage.livraisons.size(); ++i) {
 			 list.add(TestStorage.livraisons.get(i).client.name + "-" + TestStorage.livraisons.get(i).etat);
 		 }
+		 
 		 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 		        android.R.layout.simple_list_item_1, list);
 		
 		liste_des_missions.setAdapter(adapter);
-	
+
+		Log.v("Mes_logs", "livraison.size" + TestStorage.livraisons.size());
 	}
 	
 	

@@ -45,8 +45,8 @@ public class DetailMissionActivity extends Activity {
 		   idMission  = intent.getLongExtra(ListeDesMissionsActivity.NUMERO_MISSION,0);
 		   Log.v("Mes_logs"," idMission : "+ idMission );
 		   
-		   TestStorage database = new TestStorage();
-		   List<Mission> missions = database.livraisons;
+		   
+		   List<Mission> missions = TestStorage.livraisons;
 		   
 		   for(int i=0 ; i < missions.size(); ++i )
 		   {
