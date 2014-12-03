@@ -18,9 +18,9 @@ public class LocalisationActivity extends Activity {
 		@Override
 	    public void onLocationChanged(Location location) {
 			TestStorage.location = location;
-			location.getLatitude();
-			location.getLongitude();
-	    }
+			lblLatitudeVal.setText(" " + location.getLatitude());
+			lblLongitudeVal.setText(" " + location.getLongitude());
+		}
 
 		@Override
 		public void onProviderDisabled(String arg0) {
