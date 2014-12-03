@@ -40,13 +40,6 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/txtPrenomClient"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txtPrenomClient"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
         android:id="@+id/txtAdresseClient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,7 +54,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/txtVilleCLient"
+        android:id="@+id/txtVilleClient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txtVilleCLient"
