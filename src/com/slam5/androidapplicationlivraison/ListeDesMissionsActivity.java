@@ -7,12 +7,15 @@ import com.slam5.androidapplicationlivraison.storage.TestStorage;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+
 import android.widget.ListAdapter;
+
 import android.widget.ListView;
 
 public class ListeDesMissionsActivity extends Activity{
@@ -35,12 +38,12 @@ public class ListeDesMissionsActivity extends Activity{
 		
 		setContentView(R.layout.liste_des_missions);
 		
-		liste_des_missions=(ListView) findViewById(R.id.numMission);
+			liste_des_missions=(ListView) findViewById(R.id.numMission);
 		
-		remplissageListMissions();
+			remplissageListMissions();
 		
 		
-		liste_des_missions.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			liste_des_missions.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position,
@@ -67,7 +70,7 @@ public class ListeDesMissionsActivity extends Activity{
 		
 		
 		 
-	}
+}
 	
 	void remplissageListMissions(){
 		
