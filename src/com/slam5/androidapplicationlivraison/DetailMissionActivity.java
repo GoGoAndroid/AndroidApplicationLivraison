@@ -88,20 +88,35 @@ public class DetailMissionActivity extends Activity {
 		Log.v("monTag", "J'apelle getMission.");
 		Mission mission=getMission((int) idMission);
 		
-		 for (Produit produit: mission.produitsQte.keySet() ) {
-			 int qte = mission.produitsQte.get(produit);
-			 
-			 		 }
 		
-		if (mission == null){
-				 Log.v("monTag", "Il n'y a aucun colis.");
-		}
+		int i= 0;
+		HashMap<Integer, Produit> positionProduit = new HashMap<Integer,Produit>();
+		
+		for (Produit produit: mission.produitsQte.keySet() ) {
+			 int qte = mission.produitsQte.get(produit);
+			 Log.v("monTag", "Ma variable qte contient : " + qte);
+			 list.add(produit.name+ " - "+ mission.produitsQte.get(produit));
+				positionProduit.put(i, produit);
+			 		 }
+	
 		
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 		        android.R.layout.simple_list_item_1, list);
 		
 		liste_des_colis.setAdapter(adapter);
 	}
+	
+//  void remplissageListColis(){
+//		ArrayList<String> list = new ArrayList<String>();
+//		 for (int i = 0; i < nomsColis.length; ++i) {
+//			 list.add(nomsColis[i] + ", quantité : " + qteColis[i]);
+//		 }
+//		 
+//		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+//		        android.R.layout.simple_list_item_1, list);
+//		liste_des_colis.setAdapter(adapter);
+//		
+//	}
 	
 	Mission getMission(int id){
 		Mission mission=null;
@@ -130,16 +145,6 @@ public class DetailMissionActivity extends Activity {
     
     
     
-//    void remplissageListColis(){
-//		ArrayList<String> list = new ArrayList<String>();
-//		 for (int i = 0; i < nomsColis.length; ++i) {
-//			 list.add(nomsColis[i] + ", quantité : " + qteColis[i]);
-//		 }
-//		 
-//		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-//		        android.R.layout.simple_list_item_1, list);
-//		liste_des_colis.setAdapter(adapter);
-//		
-//	}
+
     
 }
