@@ -1,6 +1,13 @@
 package com.slam5.androidapplicationlivraison;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.slam5.androidapplicationlivraison.dataModel.Mission;
+import com.slam5.androidapplicationlivraison.dataModel.Produit;
+import com.slam5.androidapplicationlivraison.storage.TestStorage;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -22,86 +29,145 @@ import android.widget.TextView;
 public class SaisieEtatActivity extends Activity {
 
 	ListView liste_des_colis;
+	ListView liste_des_colis_manquant;
 
-	public static String[] nomsColis = new String[] { "Colis 1", "Colis 2", "Colis 3"};
-	public static String[] etatColis = new String[] { "", "", ""};
+	//TestStorage testStorage = new TestStorage();
 
-	
-	//public String[] etatsMissions = new String[] { "", "", ""};
+	TestStorage monTestStorage;
+	Mission mission;
+	RadioButton livre;
+	RadioButton nonLivre;
+	RadioButton partiellementLivre;
+	Map <Integer, Produit> positionProduit;
+
 
 	long idMission;
 	public static String NUMERO_MISSION ="NUMERO_DE_LA_MISSION";
 	public static int OK=999;
-	protected void onCreate(Bundle savedInstanceState)
-	{
-		liste_des_colis.setVisibility(View.INVISIBLE);
 
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		monTestStorage = new TestStorage();
+		Log.v("Mes log","onCreate");
+		//TestStorage.livraisons;
 		setContentView(R.layout.etat_mission);
 		Intent intent = getIntent();
 		idMission  = intent.getLongExtra(ListeDesMissionsActivity.NUMERO_MISSION,0);
 
 
 		liste_des_colis=(ListView) findViewById(R.id.listColisListView);
+		liste_des_colis.setVisibility(View.INVISIBLE);
 		
-		//liste_des_colis.setVisibility(View.INVISIBLE);
-		
-		ArrayList<String> list = new ArrayList<String>();
-		for (int i = 0; i < nomsColis.length; ++i) {
-			list.add(nomsColis[i]+" "+etatColis[i]);
-		}
+		liste_des_colis_manquant=(ListView) findViewById(R.id.listColisListView);
+		liste_des_colis_manquant.setVisibility(View.INVISIBLE);
 
+		List<Mission> missions=monTestStorage.livraisons;
+		liste_des_colis.setVisibility(View.INVISIBLE);
+		Log.v("Mes log","Before array");
+		ArrayList<String> list = new ArrayList<String>();
+
+		
+		for (int i = 0; i < missions.size(); ++i) {
+			Log.v("Mes log","Before mission");
+			Mission mission_temp =missions.get(i);
+			if(i == idMission)
+			{
+				Log.v("Mes log","mission");
+				mission = mission_temp;
+			}
+			//list.add(missions.get(i).description+" - "+missions.get(i));
+		}
+		Log.v("Mes log","After Mission");
+		positionProduit = new HashMap<Integer,Produit>();
+		int i= 0;
+		for(Produit produit : mission.produitsQte.keySet())
+		{
+			Log.v("Mes log","QteMission");
+			list.add(produit.name+ " - "+ mission.produitsQte.get(produit));
+			positionProduit.put(i, produit);
+		}
+		Log.v("Mes log","After Qtemission");
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1, list);
 
 		liste_des_colis.setAdapter(adapter);
 
-		
-		RadioButton livre = (RadioButton) findViewById(R.id.radioLivre);
-		
-		livre.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				boolean checked  = ((RadioButton) v) .isChecked();
-				switch(v.getId())
-				case R.id.radioLivre
-			}});
-		
-	    boolean checked = ((RadioButton) view).isChecked();
-	    
-	    // Check which radio button was clicked
-	    switch(view.getId()) {
-	        case R.id.radio_pirates:
-	            if (checked)
-	                // Pirates are the best
-	            break;
-	        case R.id.radio_ninjas:
-	            if (checked)
-	                // Ninjas rule
-	            break;
 
 
 
-		//((TextView) findViewById(R.id.descriptionTextView)).setText(descriptionDesMissions.get(idMission));
-		//Button boutonSaisieEtat=(Button) findViewById(R.id.saisieEtatButton) ;
+		livre = (RadioButton) findViewById(R.id.radioLivre);
+		livre.setOnClickListener(
+				new View.OnClickListener(){
+					public void onClick(View v){
+						if(livre.isChecked()) {
+							liste_des_colis.setVisibility(View.INVISIBLE);
+						}
+					}
+				}
+
+		);
+
+		nonLivre = (RadioButton) findViewById(R.id.radioNonLivre);
+		nonLivre.setOnClickListener(
+				new View.OnClickListener() {
+					public void onClick(View v){
+						if(nonLivre.isChecked()){
+							liste_des_colis.setVisibility(View.INVISIBLE);;
+						}
+					}
+				}
+		);
+
+		partiellementLivre = (RadioButton)findViewById(R.id.radioPartiellementLivre);
+		partiellementLivre.setOnClickListener(
+				new View.OnClickListener() {
+					public void onClick(View v){	
+						Log.v("mes log", "PartiellementLivre");
+						//checkedPartiellementLivre = partiellementLivre.isChecked();
+						if (partiellementLivre.isChecked()){
+							liste_des_colis.setVisibility(View.VISIBLE);
+						}
+					}
+				}
+			);
+
+
+		
+		liste_des_colis.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position,
+					long id) {
+				liste_des_colis_manquant.setVisibility(View.VISIBLE);
+
+				
+			}
+		    });
+
+
+		//@Override
+		//public void onClick(View v) {
+		// TODO Auto-generated method stub
+
+		//}
+		//}
+
+
+
+
+
+
 
 		Button buttonClick = (Button) findViewById(R.id.btnAjoutColisManquant);
 		buttonClick.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				setResult(OK);
-				finish();
+				Intent intent = new Intent(SaisieEtatActivity.this, BonDeLivraisonActivity.class);
+				intent.putExtra(NUMERO_MISSION, idMission);
+				startActivity(intent);
 			}});
-		//Spinner spinner = (Spinner) findViewById(R.id.spinner1);
-		// Create an ArrayAdapter using the string array and a default spinner layout
-		//ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-		//R.array.planets_array, android.R.layout.simple_spinner_item);
-		//ArrayAdapter<String> adapterListMissions = 
-		//		new ArrayAdapter<String>(
-		//		activity, android.R.layout.simple_list_item_1, listeDesValeurs);
 
-		// Specify the layout to use when the list of choices appears
-		//adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		// Apply the adapter to the spinner
-		//spinner.setAdapter(adapter);
 	}
 
 

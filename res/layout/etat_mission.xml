@@ -35,10 +35,6 @@
 	    android:layout_width="102dp"
 	    android:layout_height="wrap_content"
 	    android:text="@string/btnValider" />
-
-	<Button android:id="@+id/btnAjoutColisManquant"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:text="Ajouter Colis Manquant" />
 	
 	    <include
         android:layout_width="match_parent"
@@ -53,6 +49,12 @@
 		android:hint="colisManquant_hint" android:inputType="text"
 		android:text="colisManquant" />
  -->
+
+	    <Button
+	        android:id="@+id/btnAjoutColisManquant"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Ajouter Colis Manquant" />
 
 	<Spinner
 	    android:id="@+id/spinner1"
