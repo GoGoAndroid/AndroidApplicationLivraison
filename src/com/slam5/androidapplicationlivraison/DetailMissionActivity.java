@@ -90,13 +90,11 @@ public class DetailMissionActivity extends Activity {
 		
 		
 		int i= 0;
-		HashMap<Integer, Produit> positionProduit = new HashMap<Integer,Produit>();
 		
 		for (Produit produit: mission.produitsQte.keySet() ) {
 			 int qte = mission.produitsQte.get(produit);
 			 Log.v("monTag", "Ma variable qte contient : " + qte);
 			 list.add(produit.name+ " - "+ mission.produitsQte.get(produit));
-				positionProduit.put(i, produit);
 			 		 }
 	
 		
