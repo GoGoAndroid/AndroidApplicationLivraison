@@ -16,9 +16,40 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 
 
 public class DetailMissionActivity extends Activity {
+	Activity activity;
+	TextView lblLatitudeLib;
+	TextView lblLatitudeVal;
+	TextView lblLongitudeLib;
+	TextView lblLongitudeVal;
+	LocationListener locationListener = new LocationListener() {
+		@Override
+	    public void onLocationChanged(Location location) {
+			TestStorage.location = location;
+			lblLatitudeVal.setText(" " + location.getLatitude());
+			lblLongitudeVal.setText(" " + location.getLongitude());
+		}
+
+		@Override
+		public void onProviderDisabled(String arg0) {
+			
+		}
+
+		@Override
+		public void onProviderEnabled(String arg0) {
+			
+		}
+
+		@Override
+		public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
+			
+		}
+	};
 
 	static Map<Long,String> descriptionDesMissions;
 	 static
@@ -49,12 +80,14 @@ public class DetailMissionActivity extends Activity {
 	public static String[] nomsColis = new String[] { "Colis 1", "Colis 2", "Colis 3", "Colis 4", "Colis 5"};
 	public static String[] qteColis = new String[] {"25", "7","13","10","3"};
 	public String[] etatsMissions = new String[] { "", "", ""};	
-	
+
+	LocationManager locationManger;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.detail_mission);
+		setContentView(R.layout.vue_localisation);
 		 Intent intent = getIntent();
 		   idMission  = intent.getLongExtra(ListeDesMissionsActivity.NUMERO_MISSION,0);
 
@@ -79,7 +112,20 @@ public class DetailMissionActivity extends Activity {
 
 	             }
 	         });
-		
+		  
+			lblLatitudeLib=(TextView) findViewById(R.id.tvLatitudeLibelle);
+			lblLatitudeVal=(TextView) findViewById(R.id.tvLatitudeValeur);
+			lblLongitudeLib=(TextView) findViewById(R.id.tvLongitudeLibelle);
+			lblLongitudeVal=(TextView) findViewById(R.id.tvLongitudeValeur);		
+	}
+	protected void onResume() {
+	    super.onResume();
+	    locationManger = (LocationManager) this.getSystemService(LOCATION_SERVICE);
+	    locationManger.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10000, 0, locationListener);
+	}
+	protected void onPause() {
+	    super.onPause();
+	    locationManger.removeUpdates(locationListener);
 	}
 	
 	void remplissageListColis(){
@@ -105,7 +151,7 @@ public class DetailMissionActivity extends Activity {
 			 
 			 	if (uneMission.id == id){
 			 		mission  = uneMission;
-					 Log.v("monTag", "Mission trouvée.");
+					 Log.v("monTag", "Mission trouvÃ©e.");
 			 		break;
 			 	}
 		 }
@@ -125,7 +171,7 @@ public class DetailMissionActivity extends Activity {
 //    void remplissageListColis(){
 //		ArrayList<String> list = new ArrayList<String>();
 //		 for (int i = 0; i < nomsColis.length; ++i) {
-//			 list.add(nomsColis[i] + ", quantité : " + qteColis[i]);
+//			 list.add(nomsColis[i] + ", quantitÃ© : " + qteColis[i]);
 //		 }
 //		 
 //		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
